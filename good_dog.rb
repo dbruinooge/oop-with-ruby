@@ -1,30 +1,18 @@
 class GoodDog
-  attr_accessor :name, :height, :weight
+  DOG_YEARS = 7
+  attr_accessor :name, :age
   
-  def initialize(n, h, w)
-    @name = n
-    @height = h
-    @weight = w
-  end
-
-  def speak
-    "#{name} says Arf!"
-  end
-
-  def change_info(n, h, w)
+  def initialize(n, a)
     self.name = n
-    self.height = h
-    self.weight = w
+    self.age = a * DOG_YEARS
   end
-
-  def info
-    "#{self.name} weighs #{self.weight} and is #{self.height} tall."
+  
+  def to_s
+    "This dog's name is #{name} and it is #{age} in dog years."
   end
 end
 
-sparky = GoodDog.new('Sparky', '20 lbs', '25 inches')
-puts sparky.info
-sparky.name = 'Spartacus'
-puts sparky.name
-sparky.change_info('Sparky', '10 lbs', '12 inches')
-puts sparky.info
+sparky = GoodDog.new('Sparky', 4)
+
+puts sparky.age
+puts sparky
